@@ -95,6 +95,16 @@ public class Main {
         } else {
             System.out.println("Checkout Button is disabled.");
         }
+        Thread.sleep(1000);
+
+
+        /*getAttribute(String name) metodu, bir WebElement'in belirli bir HTML özniteliğini almak için kullanılır.
+        Örneğin, bir elementin id, class, href, value gibi özniteliklerini almak için bu metod kullanılabilir.*/
+        WebElement linkElement = webDriver.findElement(By.className("checkout_button")); // Örnek olarak bir bağlantı seçildi
+        String hrefAttributeValue = linkElement.getAttribute("href");
+        System.out.println("href attribute value: " + hrefAttributeValue);
+        Thread.sleep(1000);
+
 
         WebElement menuButton = webDriver.findElement(By.xpath("//*[@id=\"menu_button_container\"]/div/div[3]/div/button"));
         menuButton.click();
